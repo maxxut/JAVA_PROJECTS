@@ -1,0 +1,36 @@
+
+import java.util.Scanner; 
+
+public class kvur {
+	
+	public static void main (String[] args) 
+	throws java.io.IOException {
+		System.out.println("\t\tРешение квадратных уравнений");
+		//int a;
+		double k1;
+		double k2;
+		double Dd;
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println("Введите a: ");
+		int a = scan.nextInt();
+		System.out.println("Введите b: ");
+		int b = scan.nextInt();
+		System.out.println("Введите c: ");
+		int c = scan.nextInt();
+		
+		//   Дискриминант
+		Dd = (b*b) - (4 * a *c);
+	   //x1 и  x2 находим корни
+		k1 = (-b) + (Math.sqrt(Dd)) / (2 * a);
+		k2 = (-b) - (Math.sqrt(Dd)) / (2 * a);
+		int x1 = (int)k1;
+		int x2 = (int)k2;
+		if (Dd == 0) System.out.println("Есть ровно один корень" + x1);
+		if (Dd < 0) System.out.println("Корней нет" );
+		if (Dd > 0) System.out.println("Будет 2 корня" + "\tx1="+ x1 + "\tx2=" + x2);
+	// закрываем утечку Scanner
+		scan.close();
+	}
+}
+
